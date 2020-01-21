@@ -1,12 +1,13 @@
 {
   "name": "vue-hello-week",
-  "version": "0.0.001",
+  "version": "0.1.0",
   "scripts": {
     "serve": "vue-cli-service serve ./src/examples.js",
     "build": "vue-cli-service build --dest dist --target lib --name hello-week src/plugin.js --formats commonjs"
   },
   "main": "./dist/hello-week.common.js",
   "dependencies": {
+    "hello-week": "^3.0.2-alpha",
     "vue": "^2.6.10"
   },
   "devDependencies": {

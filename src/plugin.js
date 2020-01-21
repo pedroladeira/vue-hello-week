@@ -1,7 +1,7 @@
-import HelloWeek from "@/HelloWeek";
+import HelloWeek from '@/HelloWeek';
 
 export default {
-  install(Vue) {
-    Vue.component(HelloWeek.name, HelloWeek);
-  }
+	install (Vue) {
+		Vue.component(HelloWeek.name, HelloWeek);
+	}
 };
