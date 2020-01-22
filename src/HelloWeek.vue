@@ -1,12 +1,12 @@
 <template>
-	<div class="hello-week" :class="[theme]">
-	</div>
+	<div class="hello-week" :class="[theme]"></div>
 </template>
 
 <script>
 import HelloWeek from 'hello-week';
 import 'hello-week/dist/hello.week.css';
 import 'hello-week/dist/default.theme.css';
+import Vue from 'vue';
 
 export default {
 	name: 'v-hello-week',
@@ -24,6 +24,7 @@ export default {
 		return {
 			instance: null,
 			defaultOptions: {
+				langFolder: Vue.prototype.$helloweekOptions.langFolder,
 				format: 'DD/MM/YYYY',
 				weekShort: true,
 				monthShort: false,
