@@ -1,6 +1,6 @@
 {
   "name": "vue-hello-week",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "scripts": {
     "serve": "vue-cli-service serve ./src/examples.js",
     "build": "vue-cli-service build --dest dist --target lib --name hello-week src/plugin.js --formats commonjs"
