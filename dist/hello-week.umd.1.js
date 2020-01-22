@@ -1058,4 +1058,4 @@ window.HelloWeek = HelloWeek$1;
 /***/ })
 
 }]);
-//# sourceMappingURL=hello-week.common.1.js.map
+//# sourceMappingURL=hello-week.umd.1.js.map

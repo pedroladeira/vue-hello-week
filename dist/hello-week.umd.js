@@ -1,5 +1,14 @@
-module.exports =
-/******/ (function(modules) { // webpackBootstrap
+(function webpackUniversalModuleDefinition(root, factory) {
+	if(typeof exports === 'object' && typeof module === 'object')
+		module.exports = factory();
+	else if(typeof define === 'function' && define.amd)
+		define([], factory);
+	else if(typeof exports === 'object')
+		exports["hello-week"] = factory();
+	else
+		root["hello-week"] = factory();
+})((typeof self !== 'undefined' ? self : this), function() {
+return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// install a JSONP callback for chunk loading
 /******/ 	function webpackJsonpCallback(data) {
 /******/ 		var chunkIds = data[0];
@@ -44,7 +53,7 @@ module.exports =
 /******/
 /******/ 	// script path function
 /******/ 	function jsonpScriptSrc(chunkId) {
-/******/ 		return __webpack_require__.p + "hello-week.common." + ({}[chunkId]||chunkId) + ".js"
+/******/ 		return __webpack_require__.p + "hello-week.umd." + ({}[chunkId]||chunkId) + ".js"
 /******/ 	}
 /******/
 /******/ 	// The require function
@@ -6142,4 +6151,5 @@ module.exports = global.Promise;
 /***/ })
 
 /******/ });
-//# sourceMappingURL=hello-week.common.js.map
+});
+//# sourceMappingURL=hello-week.umd.js.map

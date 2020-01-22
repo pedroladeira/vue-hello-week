@@ -15,4 +15,4 @@ __webpack_require__.r(__webpack_exports__);
 /***/ })
 
 }]);
-//# sourceMappingURL=hello-week.common.5.js.map
+//# sourceMappingURL=hello-week.umd.5.js.map
