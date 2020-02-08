@@ -3,9 +3,10 @@
 </template>
 
 <script>
+import Vue from 'vue';
+import HelloWeekDay from './HelloWeekDay';
 import HelloWeek from 'hello-week';
 import 'hello-week/dist/hello.week.css';
-import 'hello-week/dist/default.theme.css';
 
 export default {
 	name: 'v-hello-week',
@@ -17,6 +18,12 @@ export default {
 		options: {
 			required: false,
 			default: () => {}
+		},
+		events: {
+			required: false,
+			default: () => {
+				return [];
+			}
 		}
 	},
 	data () {
@@ -40,8 +47,10 @@ export default {
 				locked: false,
 				minDate: null,
 				maxDate: null,
-				nav: ['◀', '▶']
-			}
+				nav: ['◀', '▶'],
+				beforeCreateDay: this.onBeforeCreateDay
+			},
+			calendarDays: [],
 		};
 	},
 	mounted () {
@@ -50,6 +59,7 @@ export default {
 			...{
 				selector: this.$el,
 				onLoad: () => {
+					this.processDays();
 					this.$emit('load');
 				},
 				onChange: () => {
@@ -64,6 +74,41 @@ export default {
 			},
 			...this.options
 		});
+		// this.processDays();
+	},
+	methods: {
+		onBeforeCreateDay (data) {
+			data.attributes.style = {
+				...data.attributes.style,
+				...{
+					border: '0.5px solid gray',
+					fontSize: 'small',
+					outline: 'none',
+					padding: 0,
+					display: 'block',
+					height: '100px'
+				}
+			};
+			const container = document.createElement('div');
+			container.attributes.id = 'nday-' + data.date;
+			data.node = {
+				nodeName: 'div',
+				attributes: data.attributes,
+				children: [container]
+			};
+			this.calendarDays.push(data.day);
+			return data;
+		},
+		processDays () {
+			const ComponentCtor = Vue.extend(HelloWeekDay);
+			const componentInstance = new ComponentCtor({
+				propsData: {
+					day: '1'
+				}
+			});
+			componentInstance.$mount('#nday-2020-02-06');
+			console.log('Events', this.calendarDays);
+		}
 	}
 };
 </script>
