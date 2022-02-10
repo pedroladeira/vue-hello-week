@@ -22,7 +22,7 @@
     "core-js": "^3.4.3",
     "eslint": "^5.16.0",
     "eslint-plugin-vue": "^5.2.3",
-    "node-sass": "^4.13.0",
+    "node-sass": "^7.0.0",
     "rollup-plugin-babel": "^4.3.3",
     "rollup-plugin-buble": "^0.19.8",
     "rollup-plugin-commonjs": "^10.1.0",
